@@ -1,0 +1,3 @@
+[32mINFO    [0m test_Verify_punch_In_user:test_HomePage.py:30 Click watch icon
+[32mINFO    [0m test_Verify_punch_In_user:test_HomePage.py:31 Click Punch in Button
+[32mINFO    [0m test_Verify_punch_In_user:test_HomePage.py:32 Click Dashboard

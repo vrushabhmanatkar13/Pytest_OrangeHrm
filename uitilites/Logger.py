@@ -2,6 +2,8 @@ import inspect
 import logging
 import os.path
 
+import allure
+
 
 def setup_logging(file_path):
     global file
@@ -17,16 +19,6 @@ def get_logger(testcase_name):
     return log
 
 
-# def custom_logger():
-#     log_name = inspect.stack()[1][3]
-#     logger = logging.getLogger(log_name)
-#     logger.setLevel(logging.DEBUG)
-#     file_handler = logging.FileHandler(
-#         os.path.normpath(os.getcwd() + os.sep).rstrip("/uitilites/") + "/Report/test_reports.log", mode='a')
-#     print(file_handler)
-#     file_handler.setLevel(logging.DEBUG)
-#     formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s : %(message)s',
-#                                   datefmt='%d/%m/%y %I:%M:%S %p %A')
-#     file_handler.setFormatter(formatter)
-#     logger.addHandler(file_handler)
-#     return logger
+@allure.step
+def Step(step):
+    pass

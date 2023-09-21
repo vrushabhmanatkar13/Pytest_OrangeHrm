@@ -1,12 +1,15 @@
 import os.path
+import platform
 
+import allure
 import pytest
+from allure_commons.types import AttachmentType
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 
-from uitilites.Logger import setup_logging
+from uitilites.Logger import setup_logging, Step
 from uitilites.readProperties import getConfig
 
 
@@ -33,6 +36,7 @@ implicit_wait = float(getConfig().get('static data', 'implicit_wait'))
 
 @pytest.fixture(scope="class", autouse=True)
 def Setup_TearDown(request):
+    global driver
     browser_name: [str] = request.config.getoption("--browsername")
     if browser_name.lower() == "chrome":
         driver = Chrome_Option(request)
@@ -42,8 +46,13 @@ def Setup_TearDown(request):
         driver = Edge_Option(request)
     else:
         raise Exception("Browser not Present")
-
+    allure.attach(f"Python Version :{platform.python_version()}", name="Python Version",
+                  attachment_type=allure.attachment_type.TEXT)
+    allure.attach(f"Platform Info :{platform.platform()}", name="Platform Info",
+                  attachment_type=allure.attachment_type.TEXT)
+    allure.attach(f"Browser Name :{driver.name}", name="Browser Name", attachment_type=allure.attachment_type.TEXT)
     driver.get(url)
+    allure.attach(f"Url :{url}", name="Application url", attachment_type=allure.attachment_type.TEXT)
     driver.maximize_window()
     driver.implicitly_wait(implicit_wait)
     request.cls.driver: WebDriver = driver
@@ -51,9 +60,20 @@ def Setup_TearDown(request):
     driver.quit()
 
 
-@pytest.fixture(autouse=True)
-def wait(Setup_TearDown):
-    return WebDriverWait(Setup_TearDown, 10)
+@pytest.hookimpl(hookwrapper=True, tryfirst=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    setattr(item, "rep_" + rep.when, rep)
+    return rep
+
+
+@pytest.fixture()
+def log_on_failure(request):
+    yield
+    item = request.node
+    if item.rep_call.failed:
+        allure.attach(driver.get_screenshot_as_png(), name=request.node.name, attachment_type=AttachmentType.PNG)
 
 
 def Chrome_Option(request):
@@ -88,5 +108,3 @@ def Edge_Option(request):
     option.add_argument("–incognito")
     driver = webdriver.Edge(service=Service(), options=option)
     return driver
-
-

@@ -1,0 +1,3 @@
+[32mINFO    [0m test_Verify_MyInfo:test_MyInfoPage.py:19 UserName: Dinil Collings (Header)
+[32mINFO    [0m test_Verify_MyInfo:test_MyInfoPage.py:21 Click My Info
+[32mINFO    [0m test_Verify_MyInfo:test_MyInfoPage.py:25 Username:Dinil Collings (My Info)
