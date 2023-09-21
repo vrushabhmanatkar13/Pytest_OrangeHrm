@@ -1,4 +1,6 @@
+import allure
 import pytest
+from allure_commons.types import AttachmentType
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.support.wait import WebDriverWait
 
@@ -23,3 +25,15 @@ class TestBase(BaseClass):
         self.loginpage = LoginPageObject(self.driver, self.baseclass)
         self.homepage = HomePageObject(self.driver, self.baseclass)
         self.myinfo = MyInfoPageObject(self.driver, self.baseclass)
+
+
+# @pytest.hookimpl(tryfirst=True)
+# def pytest_runtest_makereport(item, call):
+#     outcome = yield
+#     rep = outcome.get_result()
+#
+#     if rep.outcome == "passed":
+#         print(f"Test {item.nodeid} passed!")
+#     elif rep.outcome == "failed":
+#         print(f"Test {item.nodeid} failed!")
+#         allure.attach(item.parent.obj.driver.get_screenshot_as_png(), name=item.node.name, attachment_type=AttachmentType.PNG)

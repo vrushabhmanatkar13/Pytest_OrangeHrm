@@ -1,5 +1,6 @@
 import time
 
+import allure
 from selenium.webdriver.chrome.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 
@@ -16,6 +17,7 @@ class LoginPageObject:
     textbox_password = (By.XPATH, "//input[@name='password']")
     button_login = (By.XPATH, "//button[@type='submit']")
 
+    @allure.step('Enter:"{username}", Enter:"{password} and click Login"')
     def Login(self, username, password):
         self.baseclass.sendkeys(self.driver,self.textbox_username, username)
         self.baseclass.sendkeys(self.driver,self.textbox_password, password)

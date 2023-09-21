@@ -1,9 +1,13 @@
+import allure
+import pytest
+
 from tests.test_A_LoginPage import username, password
 from tests.testbase import TestBase
 from uitilites.Logger import get_logger
 
-
+@pytest.mark.usefixtures("log_on_failure")
 class TestHomePage(TestBase):
+
     def test_Verify_puch_out_user(self, request):
         test_name = get_logger(request.node.name)
         self.loginpage.Login(username, password)
@@ -17,6 +21,7 @@ class TestHomePage(TestBase):
         self.assert_equals("Attendance", header_text, test_name)
         self.assert_equals("Success", success_text, test_name)
         self.assert_not_equals(text_out, text_in, test_name)
+
 
     def test_Verify_punch_In_user(self, request):
         test_name = get_logger(request.node.name)

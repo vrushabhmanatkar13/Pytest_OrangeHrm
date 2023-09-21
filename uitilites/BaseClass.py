@@ -19,7 +19,7 @@ class BaseClass:
     # driver: Union[webdriver.Chrome, webdriver.Firefox, webdriver.Edge, webdriver.Remote]
     # driver: ClassVar[webdriver.Chrome]
     # driver: WebDriver
-    def WebdriverWait(self, driver):
+    def WebdriverWait(self,driver):
         self.wait = WebDriverWait(driver, 20)
 
     def click(self, driver: WebDriver, webelement):
