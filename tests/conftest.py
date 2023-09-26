@@ -11,6 +11,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 from uitilites.Logger import setup_logging, Step
 from uitilites.readProperties import getConfig
+from uitilites.read_excle import load_excel_file
 
 
 def pytest_addoption(parser):
@@ -22,9 +23,13 @@ def pytest_addoption(parser):
     )
 
 
+load_excel_file("/TestData/Data.xlsx")
+
+
 @pytest.fixture(scope="session", autouse=True)
 def Get_log():
     file = "./Log/logfile.log"
+
     if os.path.exists(file):
         os.remove(file)
     yield setup_logging(file)
@@ -66,6 +71,11 @@ def pytest_runtest_makereport(item, call):
     rep = outcome.get_result()
     setattr(item, "rep_" + rep.when, rep)
     return rep
+
+
+# @pytest.fixture(scope="function",autouse=True)
+# def load_excel():
+#     load_excel_file("/TestData/Data.xlsx")
 
 
 @pytest.fixture()

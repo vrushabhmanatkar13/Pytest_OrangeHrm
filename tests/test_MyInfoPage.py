@@ -8,11 +8,12 @@ from tests.test_A_LoginPage import username, password
 from tests.testbase import TestBase
 from uitilites.Logger import get_logger
 
+
+@allure.feature("My Info Page")
 @pytest.mark.usefixtures("log_on_failure")
 class TestMyInfoPage(TestBase):
-
+    @allure.title("Verify Name")
     def test_Verify_MyInfo(self, request):
-
         test_name = get_logger(request.node.name)
         self.loginpage.Login(username, password)
         text_username = self.sidebar.get_user_name()
@@ -25,4 +26,3 @@ class TestMyInfoPage(TestBase):
         test_name.info(f"Username:{label_username} (My Info)")
         self.assert_equals("PIM", header_text, test_name)
         self.assert_equals(text_username, label_username, test_name)
-

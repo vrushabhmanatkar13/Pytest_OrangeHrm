@@ -20,7 +20,7 @@ class BaseClass:
     # driver: ClassVar[webdriver.Chrome]
     # driver: WebDriver
     def WebdriverWait(self,driver):
-        self.wait = WebDriverWait(driver, 20)
+        self.wait = WebDriverWait(driver, webdriver_wait)
 
     def click(self, driver: WebDriver, webelement):
         log = get_logger("click")
