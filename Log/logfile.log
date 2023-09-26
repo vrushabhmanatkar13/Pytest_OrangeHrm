@@ -1,15 +1,2 @@
-2023-09-21 23:51:43,935 : INFO : test_Verify_Login_ValidData : Enter username:Admin and Enter password:admin123
-2023-09-21 23:51:43,935 : INFO : test_Verify_Login_ValidData : Click login
-2023-09-21 23:52:16,848 : ERROR : click_javascript : Element Not FoundMessage: Unable to locate element: //button[normalize-space()='Out']; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-2023-09-21 23:52:21,864 : ERROR : gettext : Element Not foundMessage: Unable to locate element: //p[text()='Success']; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-2023-09-21 23:52:22,810 : INFO : test_Verify_puch_out_user : Click watch icon
-2023-09-21 23:52:22,810 : INFO : test_Verify_puch_out_user : Click Punch out Button
-2023-09-21 23:52:22,811 : INFO : test_Verify_puch_out_user : Click Dashboard
-2023-09-21 23:52:27,749 : ERROR : test_Verify_puch_out_user : Expected: Attendance, Found: Attendance
-Attendance
-2023-09-21 23:52:37,915 : INFO : test_Verify_punch_In_user : Click watch icon
-2023-09-21 23:52:37,915 : INFO : test_Verify_punch_In_user : Click Punch in Button
-2023-09-21 23:52:37,915 : INFO : test_Verify_punch_In_user : Click Dashboard
-2023-09-21 23:53:09,037 : INFO : test_Verify_MyInfo : UserName: Dinil Collings (Header)
-2023-09-21 23:53:10,637 : INFO : test_Verify_MyInfo : Click My Info
-2023-09-21 23:53:12,339 : INFO : test_Verify_MyInfo : Username:Dinil Collings (My Info)
+2023-09-26 23:37:19,797 : INFO : test_Verify_Login_ValidData[Admin -admin123] : Enter username:Admin  and Enter password:admin123
+2023-09-26 23:37:19,798 : INFO : test_Verify_Login_ValidData[Admin -admin123] : Click login

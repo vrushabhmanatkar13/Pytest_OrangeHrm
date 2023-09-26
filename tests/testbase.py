@@ -11,6 +11,9 @@ from pageObject.SideBar_Header import SideBarPage
 from tests.conftest import Setup_TearDown
 
 from uitilites.BaseClass import BaseClass
+from uitilites.read_excle import load_excel_file
+
+
 
 
 @pytest.mark.usefixtures("Setup_TearDown")
@@ -25,15 +28,4 @@ class TestBase(BaseClass):
         self.loginpage = LoginPageObject(self.driver, self.baseclass)
         self.homepage = HomePageObject(self.driver, self.baseclass)
         self.myinfo = MyInfoPageObject(self.driver, self.baseclass)
-
-
-# @pytest.hookimpl(tryfirst=True)
-# def pytest_runtest_makereport(item, call):
-#     outcome = yield
-#     rep = outcome.get_result()
-#
-#     if rep.outcome == "passed":
-#         print(f"Test {item.nodeid} passed!")
-#     elif rep.outcome == "failed":
-#         print(f"Test {item.nodeid} failed!")
-#         allure.attach(item.parent.obj.driver.get_screenshot_as_png(), name=item.node.name, attachment_type=AttachmentType.PNG)
+        #load_excel_file("/TestData/Data.xlsx")

@@ -1,0 +1,2 @@
+[32mINFO    [0m test_Verify_Login_ValidData[Admin -admin123]:test_A_LoginPage.py:28 Enter username:Admin  and Enter password:admin123
+[32mINFO    [0m test_Verify_Login_ValidData[Admin -admin123]:test_A_LoginPage.py:29 Click login

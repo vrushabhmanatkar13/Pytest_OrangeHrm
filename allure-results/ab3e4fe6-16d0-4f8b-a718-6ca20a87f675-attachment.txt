@@ -1,7 +1,0 @@
-[1m[31mERROR   [0m click_javascript:BaseClass.py:42 Element Not FoundMessage: Unable to locate element: //button[normalize-space()='Out']; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-[1m[31mERROR   [0m gettext:BaseClass.py:60 Element Not foundMessage: Unable to locate element: //p[text()='Success']; For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-[32mINFO    [0m test_Verify_puch_out_user:test_HomePage.py:16 Click watch icon
-[32mINFO    [0m test_Verify_puch_out_user:test_HomePage.py:17 Click Punch out Button
-[32mINFO    [0m test_Verify_puch_out_user:test_HomePage.py:18 Click Dashboard
-[1m[31mERROR   [0m test_Verify_puch_out_user:BaseClass.py:64 Expected: Attendance, Found: Attendance
-Attendance
