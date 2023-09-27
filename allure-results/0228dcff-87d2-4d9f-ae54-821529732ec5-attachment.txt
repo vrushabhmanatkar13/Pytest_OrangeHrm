@@ -1,0 +1,6 @@
+[1m[31mERROR   [0m click_javascript:BaseClass.py:42 Element Not FoundMessage: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='Out']"}
+[32mINFO    [0m test_Verify_puch_out_user:test_HomePage.py:19 Click watch icon
+[32mINFO    [0m test_Verify_puch_out_user:test_HomePage.py:20 Click Punch out Button
+[32mINFO    [0m test_Verify_puch_out_user:test_HomePage.py:21 Click Dashboard
+[1m[31mERROR   [0m test_Verify_puch_out_user:BaseClass.py:64 Expected: Attendance, Found: Attendance
+Attendance

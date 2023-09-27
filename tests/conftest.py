@@ -23,13 +23,10 @@ def pytest_addoption(parser):
     )
 
 
-load_excel_file("/TestData/Data.xlsx")
-
-
 @pytest.fixture(scope="session", autouse=True)
 def Get_log():
-    file = "./Log/logfile.log"
 
+    file = "./Log/logfile.log"
     if os.path.exists(file):
         os.remove(file)
     yield setup_logging(file)
@@ -73,12 +70,7 @@ def pytest_runtest_makereport(item, call):
     return rep
 
 
-# @pytest.fixture(scope="function",autouse=True)
-# def load_excel():
-#     load_excel_file("/TestData/Data.xlsx")
-
-
-@pytest.fixture()
+@pytest.fixture(autouse=True)
 def log_on_failure(request):
     yield
     item = request.node

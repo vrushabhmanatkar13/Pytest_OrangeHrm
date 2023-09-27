@@ -1,2 +1,15 @@
-2023-09-26 23:37:19,797 : INFO : test_Verify_Login_ValidData[Admin -admin123] : Enter username:Admin  and Enter password:admin123
-2023-09-26 23:37:19,798 : INFO : test_Verify_Login_ValidData[Admin -admin123] : Click login
+2023-09-27 13:26:22,907 : INFO : test_Verify_Login_ValidData[Admin -admin123] : Enter username:Admin  and Enter password:admin123
+2023-09-27 13:26:22,908 : INFO : test_Verify_Login_ValidData[Admin -admin123] : Click login
+2023-09-27 13:26:41,054 : ERROR : click_javascript : Element Not FoundMessage: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='Out']"}
+2023-09-27 13:26:46,329 : INFO : test_Verify_puch_out_user : Click watch icon
+2023-09-27 13:26:46,330 : INFO : test_Verify_puch_out_user : Click Punch out Button
+2023-09-27 13:26:46,330 : INFO : test_Verify_puch_out_user : Click Dashboard
+2023-09-27 13:26:47,619 : ERROR : test_Verify_puch_out_user : Expected: Attendance, Found: Attendance
+Attendance
+2023-09-27 13:26:56,509 : ERROR : click_javascript : Element Not FoundMessage: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='In']"}
+2023-09-27 13:26:58,308 : INFO : test_Verify_punch_In_user : Click watch icon
+2023-09-27 13:26:58,309 : INFO : test_Verify_punch_In_user : Click Punch in Button
+2023-09-27 13:26:58,309 : INFO : test_Verify_punch_In_user : Click Dashboard
+2023-09-27 13:27:14,592 : INFO : test_Verify_MyInfo : UserName: DB@Test_sahil CooperGaurav_7119babbar (Header)
+2023-09-27 13:27:16,003 : INFO : test_Verify_MyInfo : Click My Info
+2023-09-27 13:27:17,677 : INFO : test_Verify_MyInfo : Username:DB@Test_sahil CooperGaurav_7119babbar (My Info)

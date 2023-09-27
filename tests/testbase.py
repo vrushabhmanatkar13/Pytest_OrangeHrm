@@ -28,4 +28,3 @@ class TestBase(BaseClass):
         self.loginpage = LoginPageObject(self.driver, self.baseclass)
         self.homepage = HomePageObject(self.driver, self.baseclass)
         self.myinfo = MyInfoPageObject(self.driver, self.baseclass)
-        #load_excel_file("/TestData/Data.xlsx")

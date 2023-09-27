@@ -1,0 +1,4 @@
+[1m[31mERROR   [0m click_javascript:BaseClass.py:42 Element Not FoundMessage: no such element: Unable to locate element: {"method":"xpath","selector":"//button[normalize-space()='In']"}
+[32mINFO    [0m test_Verify_punch_In_user:test_HomePage.py:33 Click watch icon
+[32mINFO    [0m test_Verify_punch_In_user:test_HomePage.py:34 Click Punch in Button
+[32mINFO    [0m test_Verify_punch_In_user:test_HomePage.py:35 Click Dashboard
