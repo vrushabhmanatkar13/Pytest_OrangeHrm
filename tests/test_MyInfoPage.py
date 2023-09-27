@@ -4,18 +4,19 @@ import allure
 import pytest
 from allure_commons.types import AttachmentType
 
-from tests.test_A_LoginPage import username, password
+
 from tests.testbase import TestBase
 from uitilites.Logger import get_logger
+from uitilites.read_excle import get_data_by_index
 
 
 @allure.feature("My Info Page")
-@pytest.mark.usefixtures("log_on_failure")
 class TestMyInfoPage(TestBase):
     @allure.title("Verify Name")
     def test_Verify_MyInfo(self, request):
         test_name = get_logger(request.node.name)
-        self.loginpage.Login(username, password)
+        data = get_data_by_index("login", 3)
+        self.loginpage.Login(data[0], data[1])
         text_username = self.sidebar.get_user_name()
         test_name.info(f"UserName: {text_username} (Header)")
         self.sidebar.click_sidebar_option("My Info")

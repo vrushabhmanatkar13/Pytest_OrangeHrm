@@ -12,10 +12,11 @@ def load_excel_file(excel_path):
     path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
     workbook = openpyxl.load_workbook(path + excel_path)
     print("Work Book loaded")
-    return workbook
+    # return workbook
 
 
 def get_data(sheet_name, testcase_name):
+    load_excel_file("/TestData/Data.xlsx")
     sheet = workbook[sheet_name]
     row = sheet.max_row
     col = sheet.max_column
@@ -38,5 +39,17 @@ def get_data(sheet_name, testcase_name):
                 data_list.append(row_list)
     return data_list
 
+
+def get_data_by_index(sheet_name, row_index):
+    load_excel_file("/TestData/Data.xlsx")
+    sheet = workbook[sheet_name]
+    column = sheet.max_column
+    final_data = []
+    for c in range(1, column + 1):
+        data = sheet.cell(row_index, c).value
+        if data is None:
+            break
+        final_data.append(data)
+    return final_data
 
 
